@@ -2,10 +2,10 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model=joblib.load('dataset/spam_clf.pkl')
+model=joblib.load('spam_clf.pkl')
 st.set_page_config(layout='wide')
 
-st.sidebar.image("D:\Images/flag.jpg")
+st.sidebar.image("flag.jpg")
 st.sidebar.title("ℹ️ About Us")
 st.sidebar.text("Deepak Kumar")
 st.sidebar.title("📞 Contact us")
@@ -76,4 +76,5 @@ with col2:
         if st.button("Predict",key='b2'):
             df['result']=model.predict(df.Msg)
             place.dataframe(df)
+
             
